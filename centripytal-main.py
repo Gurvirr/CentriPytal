@@ -1,10 +1,10 @@
-import pygetwindow as gw
+import pywinctl as pwc
 from pynput import keyboard
 from screeninfo import get_monitors
 
 def on_press(key):
     if key == keyboard.Key.shift:
-        active_window = gw.getActiveWindow()
+        active_window = pwc.getActiveWindow()
         monitor = get_monitors()[0]
         x = (monitor.width // 2) - (active_window.width // 2)
         y = (monitor.height // 2) - (active_window.height // 2)
